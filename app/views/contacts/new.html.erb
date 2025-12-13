@@ -1,5 +1,10 @@
 <h2>Contact</h2>
 <%= form_for :contact, url: contacts_path, data: { turbo: false } do |f| %>
+	<% if @contact %>
+	<p>
+		<%= @contact.errors.full_messages %>
+	</p>
+	<% end %>
 	<p>
 		Email<br>
 		<%= f.text_field :email %>
