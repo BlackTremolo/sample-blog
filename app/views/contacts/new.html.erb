@@ -2,7 +2,11 @@
 <%= form_for :contact, url: contacts_path, data: { turbo: false } do |f| %>
 	<% if @contact %>
 	<p>
-		<%= @contact.errors.full_messages %>
+		<ul>
+		<% @contact.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+		</ul>
 	</p>
 	<% end %>
 	<p>
