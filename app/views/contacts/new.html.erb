@@ -1,1 +1,16 @@
 <h2>Contact</h2>
+<%= form_for :contact, url: contacts_path, data: { turbo: false } do |f| %>
+	<p>
+		Email<br>
+		<%= f.text_field :email %>
+	</p>
+	<p>
+		Message<br>
+		<%= f.text_area :message %>
+	</p>
+	<p>
+		<%= f.submit 'Send message' %>
+			
+	</p>
+
+<% end %>
