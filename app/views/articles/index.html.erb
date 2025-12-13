@@ -1,0 +1,16 @@
+<h3>Articles list</h3>
+<% @articles.each do |a| %>
+	<p>
+		Title: <%= a.title %>
+	</p>
+	<br>
+	<p>
+		Text: <%= a.text %>
+	</p>
+	<br>
+	<p>
+		Created: <%= a.created_at %>
+	</p>
+	<hr>
+<% end %>
+
