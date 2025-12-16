@@ -1,8 +1,8 @@
 <h3>Articles list</h3>
 <% @articles.each do |a| %>
-	<p>
+	<h2>
 		Title: <%= a.title %>
-	</p>
+	</h2>
 	<br>
 	<p>
 		Text: <%= a.text %>
@@ -11,6 +11,7 @@
 	<p>
 		Created: <%= a.created_at %>
 	</p>
+	<%= link_to 'Show', article_path(a) %>
 	<hr>
 <% end %>
 
