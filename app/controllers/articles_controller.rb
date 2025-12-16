@@ -23,6 +23,7 @@ class ArticlesController < ApplicationController
   def edit
 
   end
+
 end
 
 private
