@@ -1,5 +1,9 @@
 class ArticlesController < ApplicationController
   
+  def show
+  @article_show = Article.find(params[:id]) 
+  end
+
   def index
     @articles = Article.all
   end
@@ -12,12 +16,10 @@ class ArticlesController < ApplicationController
     
     if @article.valid?
       @article.save
+      redirect_to @article
     else
       render action: 'new'
     end
-  end
-  def show
-  @article_show = Article.find(1) 
   end
 
   def edit
