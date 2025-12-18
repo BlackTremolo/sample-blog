@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_13_035033) do
+ActiveRecord::Schema[8.1].define(version: 2025_12_18_054130) do
   create_table "articles", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.text "text"
     t.string "title"
     t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "article_id", null: false
+    t.string "author"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -24,4 +33,6 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_13_035033) do
     t.text "message"
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "comments", "articles"
 end
