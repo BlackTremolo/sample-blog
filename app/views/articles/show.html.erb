@@ -27,3 +27,12 @@
 	</p>
 
 <% end %>
+
+<h4>Comments</h4>
+<% @article.comments.each do |c| %>
+	<p>
+		Author: <%= c.author%><br><br>
+		<%= c.body%>
+	</p>
+	<hr>
+<% end %>
