@@ -1,12 +1,29 @@
-<h3>Article <%= @article_show.id %></h3>
+<h3>Article <%= @article.id %></h3>
 <p>
-	Title: <%= @article_show.title %>
+	Title: <%= @article.title %>
 </p>
 <br>
 <p>
-	Text: <%= @article_show.text %>
+	Text: <%= @article.text %>
 </p>
 <br>
 <p>
-	Created: <%= @article_show.created_at %>
+	Created: <%= @article.created_at %>
 </p>
+
+ 
+ <%= form_for([@article, @article.comments.build]) do |f| %>
+	<p>
+		Author<br>
+		<%= f.text_field :author %>
+	</p>
+	<p>
+		Text<br>
+		<%= f.text_area :body %>
+	</p>
+	<p>
+		<%= f.submit %>
+			
+	</p>
+
+<% end %>
